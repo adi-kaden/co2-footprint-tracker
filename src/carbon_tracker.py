@@ -95,19 +95,19 @@ def visualize_data(df):
     plt.title("CO2 Emissions vs Distance Travelled")
     plt.savefig('co2_vs_distance.png')
 
-while True:
-    start_city = input("Enter name of a city where you started your travels: ").strip()
-    if start_city:
-        break
-    print("Start city cannot be empty. Try again.")
-
-while True:
-    end_city = input("Enter name of a city where you ended your travels: ")
-    if end_city:
-        break
-    print("End city cannot be empty. Try again.")
-
 if __name__ == "__main__":
+    while True:
+        start_city = input("Enter name of a city where you started your travels: ").strip()
+        if start_city:
+            break
+        print("Start city cannot be empty. Try again.")
+
+    while True:
+        end_city = input("Enter name of a city where you ended your travels: ")
+        if end_city:
+            break
+        print("End city cannot be empty. Try again.")
+
     lat, lon = get_lat_lon(start_city, GOOGLE_API_KEY)
     lat2, lon2 = get_lat_lon(end_city, GOOGLE_API_KEY)
     distance = find_distance(lat, lon, lat2, lon2, GOOGLE_API_KEY)
